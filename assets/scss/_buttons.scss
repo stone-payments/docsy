@@ -25,6 +25,12 @@
             
         }
     }
+    &-secondary {
+        background: #A3F5CC;
+        color: #008E5A;
+        box-shadow: none;
+        border: none;
+    }
 }
 
 @if $enable-rounded {
