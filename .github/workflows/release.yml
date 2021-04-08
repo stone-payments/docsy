@@ -1,0 +1,14 @@
+name: Release
+on:
+  push:
+    tags:
+      - v*.*.*
+    branches:
+      - master
+jobs:
+  trigger_update:
+    name: "Trigger Remote Submodules Update"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "Trigger stone-api-docs"
+        run: make trigger-update ${GITHUB_REF#refs/*/} ${{ github.sha }}
